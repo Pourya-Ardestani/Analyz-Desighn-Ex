@@ -1,3 +1,5 @@
+import java.sql.Time;
+
 public class WashingMachine {
     private Integer washTime;
     private Integer rinseTime;
@@ -13,32 +15,33 @@ public class WashingMachine {
 
 
     //methods
+    private void wash(){}
+    private void rinse(){}
+    private void fill(){}
+    private void empty(){}
+    private void standardWash(){}
+    private void twiceRinse(){}
     public WashingMachine() {}
 
-    public static void main(String[] args)  {
 
+    public static void main(String[] args)
+    {
         int option = washOption.getWashSelection();
-
-        switch (option) {
+        switch (option)
+        {
             case 1 -> washingMachine.standardWash();
             case 2 -> washingMachine.twiceRinse();
             case 3 -> washingMachine.spin();
         }
     }
 
-    private void wash(){}
 
-    private void rinse(){}
-
-    private void spin() {
-
+    private void spin()
+    {
         engine.turnOn();
         timer.setDuration(2000);
-        engine.turnOff();
 
-    }
-    void period() {
-
+        // period implementation
         timer.start();
         int time = timer.getValue();
         int duration = timer.getDuration();
@@ -46,13 +49,9 @@ public class WashingMachine {
         while (time != duration){
             time = timer.count();
         }
+
+        engine.turnOff();
+
     }
 
-    private void fill(){}
-
-    private void empty(){}
-
-    private void standardWash(){}
-
-    private void twiceRinse(){}
 }
